@@ -12,7 +12,6 @@ public class OutputFormatting {
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
                 multiplyTab[i][j] = (i + 1) * (j + 1);
-//                System.out.print(multiplyTab[i][j] + "\t");
                 System.out.printf("%4d", multiplyTab[i][j]);
             }
             System.out.println();

@@ -5,10 +5,6 @@
  */
 package com.actpro.education.cycle;
 
-/**
- *
- * @author vadim
- */
 public class EmptyPartFor {
 
     int i;
