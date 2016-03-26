@@ -8,6 +8,7 @@ package com.actpro.education.main;
 import com.actpro.education.cycle.EmptyPartFor;
 import com.actpro.education.cycle.For;
 import com.actpro.education.formatting.OutputFormatting;
+import com.actpro.education.text.TextModifyAction;
 
 public class Application {
 
@@ -15,27 +16,34 @@ public class Application {
         printMultiplyTable();
         executeCycle();
         executeEmptyPartCycle();
+        modifyText();
     }
 
     private static void printMultiplyTable() {
         OutputFormatting outputFormatting = new OutputFormatting();
-        print("\n Task for formatting\n");
+        print("Task for formatting");
         outputFormatting.printMultiplyTable();
     }
 
     private static void executeCycle() {
         For forCycle = new For();
-        print("\n Task for work with cycle\n");
+        print("Task for work with cycle");
         forCycle.printArray();
     }
 
     private static void executeEmptyPartCycle() {
         EmptyPartFor emptyFor = new EmptyPartFor();
-        print("\n Task  with cycle, which have empty parts\n");
+        print("Task  with cycle, which have empty parts");
         emptyFor.printResult();
+    }
+    
+    private static void modifyText() {
+        TextModifyAction textModifyAction = new TextModifyAction();
+        print("Task about modifying of string");
+        textModifyAction.modifyText();
     }
 
     private static void print(String notation) {
-        System.out.println(notation);
+        System.out.println("\n " + notation + "\n");
     }
 }
