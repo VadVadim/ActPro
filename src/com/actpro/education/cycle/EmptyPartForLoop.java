@@ -5,7 +5,7 @@
  */
 package com.actpro.education.cycle;
 
-public class EmptyPartFor {
+public class EmptyPartForLoop {
 
     int i;
     boolean kind;

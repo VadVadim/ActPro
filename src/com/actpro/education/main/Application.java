@@ -5,45 +5,73 @@
  */
 package com.actpro.education.main;
 
-import com.actpro.education.cycle.EmptyPartFor;
-import com.actpro.education.cycle.For;
+import com.actpro.education.cycle.ArrayElements;
+import com.actpro.education.cycle.EmptyPartForLoop;
+import com.actpro.education.cycle.ForLoop;
 import com.actpro.education.formatting.OutputFormatting;
 import com.actpro.education.text.TextModifyAction;
 
-public class Application {
+public class Application extends ResultOutput {
 
     public static void executeExamples() {
         printMultiplyTable();
         executeCycle();
         executeEmptyPartCycle();
         modifyText();
+        countFactorial();
+        printFirstArrayElements();
+        printFibonachiSeries();
+        printTextLength();
     }
 
     private static void printMultiplyTable() {
-        OutputFormatting outputFormatting = new OutputFormatting();
         print("Task for formatting");
+        OutputFormatting outputFormatting = new OutputFormatting();
         outputFormatting.printMultiplyTable();
     }
 
     private static void executeCycle() {
-        For forCycle = new For();
         print("Task for work with cycle");
-        forCycle.printArray();
+        ForLoop forLoop = new ForLoop();
+        forLoop.printArray();
     }
 
     private static void executeEmptyPartCycle() {
-        EmptyPartFor emptyFor = new EmptyPartFor();
         print("Task  with cycle, which have empty parts");
-        emptyFor.printResult();
+        EmptyPartForLoop emptyForLoop = new EmptyPartForLoop();
+        emptyForLoop.printResult();
     }
     
     private static void modifyText() {
-        TextModifyAction textModifyAction = new TextModifyAction();
         print("Task about modifying of string");
+        TextModifyAction textModifyAction = new TextModifyAction();
         textModifyAction.modifyText();
     }
+    
+    private static void countFactorial() {
+        print("Task with counting of factorial using recursion");
+        printFactorial();
+        print("Task with counting of factorial for loop");
+        printFactorialForLoop();
+    }
+    
+    private static void printFirstArrayElements() {
+        print("Task for Recursion");
+        ArrayElements arrayElements = new ArrayElements();
+        arrayElements.outputArrayElements();
+    }
 
-    private static void print(String notation) {
+    private static void printFibonachiSeries() {
+        print("Task about Fibonachi Series");
+        printFibSeries();
+    }
+    
+    private static void printTextLength() {
+        print("Task about String Length");
+        calcTextLength();
+    }
+    
+    static void print(Object notation) {
         System.out.println("\n " + notation + "\n");
     }
 }

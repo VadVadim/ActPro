@@ -5,10 +5,12 @@
  */
 package com.actpro.education.text;
 
+import com.actpro.education.main.ActproConstants;
+
 public class TextModifyAction {
 
     public void modifyText() {
-        String str = "dfhklfgmdjdm*bbbhm";
+        String str = ActproConstants.TEXT_FOR_MODIFYING;
         char[] arr = str.toCharArray();
         int i = 0;
         while (arr[i] != '*') {

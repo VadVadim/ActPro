@@ -5,11 +5,12 @@
  */
 package com.actpro.education.cycle;
 
-public class For {
-    public void printArray() {
-        int[] arr = {1, 5, 9, 6, 7, 0, 1, 2, 5, 8, 77, 333};
-        for (int i = 0; i < arr.length; i++) {
-            System.out.println(arr[i]);
+public class FactForLoop {
+    public static long countFactorialForLoop(int var) {
+        int result = 1;
+        for (int i = 1; i <= var; i++) {
+             result *= i;
         }
+        return result;
     }
 }
