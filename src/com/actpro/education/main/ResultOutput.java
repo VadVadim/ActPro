@@ -15,21 +15,21 @@ public class ResultOutput {
 
     private static int userNumber;
 
-    public static void printFactorial() {
+    protected static void printFactorial() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter a natural number userNumber : ");
         userNumber = scan.nextInt();
         print("Factorial " + userNumber + " equals " + Factorial.countFactorial(userNumber));
     }
 
-    public static void printFactorialForLoop() {
+    protected static void printFactorialForLoop() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Enter a natural number userNumber : ");
         userNumber = scan.nextInt();
         print("Factorial " + userNumber + " equals " + FactForLoop.countFactorialForLoop(userNumber));
     }
 
-    public static void printFibSeries() {
+    protected static void printFibSeries() {
         Fibonachi fibonachi = new Fibonachi();
         for (int i = 1; i < ActproConstants.FIBONACHI_NUMBER; i++) {
             System.out.print(" "+fibonachi.receiveFibSeries(i));
@@ -37,7 +37,7 @@ public class ResultOutput {
         System.out.println();
     }
     
-    public static void calcTextLength() {
+    protected static void calcTextLength() {
         StringLength stringLength = new StringLength();
         print(stringLength.calculateLength(ActproConstants.TEXT_FOR_LENGTH_CALC));
     }
