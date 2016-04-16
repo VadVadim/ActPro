@@ -6,6 +6,8 @@
 package com.actpro.education.main;
 
 import com.actpro.education.cycle.FactForLoop;
+import com.actpro.education.multithreading.ChickenVoice;
+import com.actpro.education.multithreading.EggVoice;
 import com.actpro.education.recursion.Factorial;
 import com.actpro.education.recursion.Fibonachi;
 import com.actpro.education.recursion.StringLength;
@@ -14,6 +16,8 @@ import java.util.Scanner;
 public class ResultOutput {
 
     private static int userNumber;
+    private static EggVoice firstOpinion;
+    private static ChickenVoice secondOpinion;
 
     protected static void printFactorial() {
         Scanner scan = new Scanner(System.in);
@@ -40,6 +44,31 @@ public class ResultOutput {
     protected static void calcTextLength() {
         StringLength stringLength = new StringLength();
         print(stringLength.calculateLength(ActproConstants.TEXT_FOR_LENGTH_CALC));
+    }
+    
+    protected static void printOpinion() {
+        firstOpinion = new EggVoice();
+        print("The dispute is started...");
+        firstOpinion.start();
+
+        secondOpinion = new ChickenVoice();
+        secondOpinion.run();
+
+        printVoice();
+        print("The dispute is completed!");
+    }
+
+    private static void printVoice() {
+        if (firstOpinion.isAlive()) {
+            try {
+                firstOpinion.join();
+            } catch (InterruptedException e) {
+            }
+
+            print("The egg came first!");
+        } else {
+            print("The chicken came first!");
+        }
     }
     
     private static void print(Object notation) {

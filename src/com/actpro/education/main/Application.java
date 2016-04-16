@@ -22,6 +22,7 @@ public class Application extends ResultOutput {
         printFirstArrayElements();
         printFibonachiSeries();
         printTextLength();
+        printEggOrChicken();
     }
 
     private static void printMultiplyTable() {
@@ -69,6 +70,11 @@ public class Application extends ResultOutput {
     private static void printTextLength() {
         print("Task about String Length");
         calcTextLength();
+    }
+    
+    private static void printEggOrChicken() {
+        print("Task about multithreading");
+        printOpinion();
     }
     
     static void print(Object notation) {
