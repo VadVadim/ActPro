@@ -10,4 +10,8 @@ public class ActproConstants {
     public static final int FIBONACHI_NUMBER = 9;
     public static final String TEXT_FOR_MODIFYING = "dfhklfgmdjdm*bbbhm";
     public static final String TEXT_FOR_LENGTH_CALC = "Java";
+    public static final int IMG_WIDTH = 5000;
+    public static final int IMG_HEIGHT = 5000;
+    public static final String INPUT_FILE_PATH = "D:/image.jpg";
+    public static final String OUTPUT_FILE_PATH = "C:/Pictures/newImage.jpg";
 }

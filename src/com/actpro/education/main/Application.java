@@ -10,6 +10,9 @@ import com.actpro.education.cycle.EmptyPartForLoop;
 import com.actpro.education.cycle.ForLoop;
 import com.actpro.education.formatting.OutputFormatting;
 import com.actpro.education.text.TextModifyAction;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 public class Application extends ResultOutput {
 
@@ -23,6 +26,11 @@ public class Application extends ResultOutput {
         printFibonachiSeries();
         printTextLength();
         printEggOrChicken();
+        try {
+            resizeImage();
+        } catch (IOException ex) {
+            Logger.getLogger(Application.class.getName()).log(Level.SEVERE, "Can't find input file!", ex);
+        }
     }
 
     private static void printMultiplyTable() {
@@ -42,20 +50,20 @@ public class Application extends ResultOutput {
         EmptyPartForLoop emptyForLoop = new EmptyPartForLoop();
         emptyForLoop.printResult();
     }
-    
+
     private static void modifyText() {
         print("Task about modifying of string");
         TextModifyAction textModifyAction = new TextModifyAction();
         textModifyAction.modifyText();
     }
-    
+
     private static void countFactorial() {
         print("Task with counting of factorial using recursion");
         printFactorial();
         print("Task with counting of factorial for loop");
         printFactorialForLoop();
     }
-    
+
     private static void printFirstArrayElements() {
         print("Task for Recursion");
         ArrayElements arrayElements = new ArrayElements();
@@ -66,17 +74,22 @@ public class Application extends ResultOutput {
         print("Task about Fibonachi Series");
         printFibSeries();
     }
-    
+
     private static void printTextLength() {
         print("Task about String Length");
         calcTextLength();
     }
-    
+
     private static void printEggOrChicken() {
         print("Task about multithreading");
         printOpinion();
     }
-    
+
+    private static void resizeImage() throws IOException {
+        changeImage();
+        print("Image resizing was succesfull");
+    }
+
     static void print(Object notation) {
         System.out.println("\n " + notation + "\n");
     }

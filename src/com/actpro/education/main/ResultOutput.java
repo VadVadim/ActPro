@@ -6,12 +6,17 @@
 package com.actpro.education.main;
 
 import com.actpro.education.cycle.FactForLoop;
+import com.actpro.education.image.resizing.ImageResizing;
 import com.actpro.education.multithreading.ChickenVoice;
 import com.actpro.education.multithreading.EggVoice;
 import com.actpro.education.recursion.Factorial;
 import com.actpro.education.recursion.Fibonachi;
 import com.actpro.education.recursion.StringLength;
+import java.awt.image.BufferedImage;
+import java.io.File;
+import java.io.IOException;
 import java.util.Scanner;
+import javax.imageio.ImageIO;
 
 public class ResultOutput {
 
@@ -69,6 +74,14 @@ public class ResultOutput {
         } else {
             print("The chicken came first!");
         }
+    }
+    
+    protected static void changeImage() throws IOException {
+        BufferedImage image = ImageIO.read(new File(ActproConstants.INPUT_FILE_PATH));
+        int type = image.getType() == 0 ? BufferedImage.TYPE_INT_ARGB : image.getType();
+
+        BufferedImage modifiedImage = ImageResizing.resizeImage(image, type);
+        ImageIO.write(modifiedImage, "jpg", new File(ActproConstants.OUTPUT_FILE_PATH));
     }
     
     private static void print(Object notation) {
