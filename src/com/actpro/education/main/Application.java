@@ -31,6 +31,7 @@ public class Application extends ResultOutput {
         } catch (IOException ex) {
             Logger.getLogger(Application.class.getName()).log(Level.SEVERE, "Can't find input file!", ex);
         }
+        printNumbers();
     }
 
     private static void printMultiplyTable() {
@@ -88,6 +89,11 @@ public class Application extends ResultOutput {
     private static void resizeImage() throws IOException {
         changeImage();
         print("Image resizing was succesfull");
+    }
+    
+    private static void printNumbers() {
+        print("Task about ArrayList");
+        printListNumbers();
     }
 
     static void print(Object notation) {

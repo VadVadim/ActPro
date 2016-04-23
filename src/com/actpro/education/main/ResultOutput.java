@@ -5,6 +5,7 @@
  */
 package com.actpro.education.main;
 
+import com.actpro.education.collections.test.ArrayListTest;
 import com.actpro.education.cycle.FactForLoop;
 import com.actpro.education.image.resizing.ImageResizing;
 import com.actpro.education.multithreading.ChickenVoice;
@@ -15,6 +16,9 @@ import com.actpro.education.recursion.StringLength;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Scanner;
 import javax.imageio.ImageIO;
 
@@ -82,6 +86,14 @@ public class ResultOutput {
 
         BufferedImage modifiedImage = ImageResizing.resizeImage(image, type);
         ImageIO.write(modifiedImage, "jpg", new File(ActproConstants.OUTPUT_FILE_PATH));
+    }
+    
+    protected static void printListNumbers() {
+        ArrayListTest testList = new ArrayListTest();     
+        for (int i = 0; i < ActproConstants.LIST_ELEMENT_QUANTITY; i++) {
+            testList.addRandom();
+        }
+        print("Random Numbers: "+testList.toString());   
     }
     
     private static void print(Object notation) {

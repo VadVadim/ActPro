@@ -14,4 +14,5 @@ public class ActproConstants {
     public static final int IMG_HEIGHT = 5000;
     public static final String INPUT_FILE_PATH = "D:/image.jpg";
     public static final String OUTPUT_FILE_PATH = "C:/Pictures/newImage.jpg";
+    public static final int LIST_ELEMENT_QUANTITY = 100;
 }
