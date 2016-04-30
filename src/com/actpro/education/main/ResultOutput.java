@@ -5,7 +5,9 @@
  */
 package com.actpro.education.main;
 
+import com.actpro.education.collections.test.AllWorkers;
 import com.actpro.education.collections.test.ArrayListTest;
+import com.actpro.education.collections.test.Worker;
 import com.actpro.education.cycle.FactForLoop;
 import com.actpro.education.image.resizing.ImageResizing;
 import com.actpro.education.multithreading.ChickenVoice;
@@ -16,9 +18,7 @@ import com.actpro.education.recursion.StringLength;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Map.Entry;
+import java.util.List;
 import java.util.Scanner;
 import javax.imageio.ImageIO;
 
@@ -94,6 +94,13 @@ public class ResultOutput {
             testList.addRandom();
         }
         print("Random Numbers: "+testList.toString());   
+    }
+    
+    protected static void printWorkersList() {
+        AllWorkers people = new AllWorkers();
+        List<Worker> newPeople = people.changeStaff();
+        print(people.toString());
+        print("New Workers\n" + newPeople.toString());
     }
     
     private static void print(Object notation) {

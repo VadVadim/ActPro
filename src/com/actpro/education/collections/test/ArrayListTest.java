@@ -14,7 +14,7 @@ public class ArrayListTest {
     Random generator = new Random();
     
     public void addRandom() {
-        list.add(generator.nextInt());
+        list.add(generator.nextInt(100));
     }
 
     public String toString() {

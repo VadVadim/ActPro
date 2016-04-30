@@ -32,6 +32,7 @@ public class Application extends ResultOutput {
             Logger.getLogger(Application.class.getName()).log(Level.SEVERE, "Can't find input file!", ex);
         }
         printNumbers();
+        printWorkers();
     }
 
     private static void printMultiplyTable() {
@@ -93,9 +94,14 @@ public class Application extends ResultOutput {
     
     private static void printNumbers() {
         print("Task about ArrayList");
-        printListNumbers();
+        printListNumbers();   
     }
 
+    private static void printWorkers() {
+        print("Task about Workers");
+        printWorkersList();   
+    }
+    
     static void print(Object notation) {
         System.out.println("\n " + notation + "\n");
     }
